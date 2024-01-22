@@ -1,0 +1,5 @@
+<svg class="mx-auto mb-8 order-[-1] md:order-1 md:my-10 lg:m-0 lg:mt-[120px] cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="88" height="10" viewBox="0 0 88 10" fill="none">
+  <circle opacity="1" cx="5" cy="5" r="4" fill="white" data-state="0"/>
+  <circle opacity="0.174363" cx="25" cy="5" r="4" fill="white" data-state="1"/>
+  <circle opacity="0.174363" cx="45" cy="5" r="4" fill="white" data-state="2"/>
+</svg>

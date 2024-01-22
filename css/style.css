@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color-almostBlack: #161616;
+  --secondary-color-grey: #2b2b2b;
+  --main-text-color: #f4f4f4;
+  --routing-text-color-blue: #00a3e0;
+  --burger-menu-color-grey: #dbdbdb;
+}
+
+body {
+  position: relative;
+  font-family: "Arial", "Helvetica Neue", sans-serif;
+  background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--main-text-color);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.hide,
+.burger-checkbox {
+  display: none;
+}
+
+header {
+  /* Positioning */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  /* Box-Model */
+  width: 100%;
+  padding: 2.4rem;
+
+  /* Visual */
+  background-color: var(--primary-color-almostBlack);
+}
+
+nav {
+  align-items: center;
+}
+
+h1 {
+  padding: 5.6rem 0;
+  font-size: 2.4rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  top: 8rem;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
+
+  list-style: none;
+  gap: 4rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+.marked-route {
+  color: var(--routing-text-color-blue);
+}
+
+.fixed-size {
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+}
+
+.tbc-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 15rem;
+  max-height: 4.9rem;
+}
+
+main {
+  margin: 8.2rem 0 0 0;
+}
+
+section {
+  padding: 0 2.4rem;
+}
+
+.technology-education-section {
+  background: white url("../assets/images/other/backgroundImageTBC.webp")
+    no-repeat center;
+  background-size: cover;
+}
+
+.heading-1-span {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.describe-section {
+  background-color: var(--secondary-color-grey);
+  padding: 3.2rem 2.4rem;
+}
+
+.describe-wrapper {
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.details {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--routing-text-color-blue);
+  align-self: start;
+}
+
+.training-courses {
+  background-color: var(--primary-color-almostBlack);
+  padding: 0 2.4rem 4.4rem 2.4rem;
+}
+
+.training-courses h3 {
+  padding: 2rem 0 2.6rem 0;
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--main-text-color);
+}
+
+.cards-container {
+  margin: 0 auto;
+  max-width: 98rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  padding: 2.6rem 1.6rem;
+  flex-grow: 1;
+}
+
+.card-description h2 {
+  font-size: 1.8rem;
+}
+
+.card-description p {
+  font-size: 1.6rem;
+  margin: 1.2rem 0 0 0;
+}
+
+.cards-container a {
+  padding: 0 2.4rem;
+  margin: 0 0 2.4rem 0;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.cards-container img {
+  width: 100%;
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.arrow-right {
+  width: 2rem;
+  height: 1.7rem;
+  margin: 0.6rem 0 0 0;
+}
+
+.slider {
+  background-color: var(--secondary-color-grey);
+  height: 43rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-container img {
+  width: auto;
+  height: auto;
+}
+
+.slider button {
+  display: none;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.slider button img {
+  width: 100%;
+  height: auto;
+  max-width: 2.8rem;
+}
+
+.slider button:last-child {
+  transform: rotate(180deg);
+}
+
+.slider-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.slider h3 {
+  padding: 2rem 0 6rem 0;
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+.slider-images {
+  width: 100%;
+  max-width: 120rem;
+  justify-content: center;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slider-active {
+  animation: blink 2s ease;
+}

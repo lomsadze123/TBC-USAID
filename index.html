@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBC x USAID</title>
+    <link
+      rel="icon"
+      sizes="16x16 192x192"
+      href="assets/images/other/favicon.png"
+      type="image/png"
+    />
+    <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/burgerMenu.css" />
+    <link rel="stylesheet" href="css/mediaQuery.css" />
+  </head>
+  <body>
+    <header class="flex justify-center">
+      <nav class="flex justify-between fixed-size">
+        <img
+          class="tbc-logo"
+          src="assets/images/other/TBClogo.svg"
+          alt="TBC academy logo"
+        />
+
+        <input type="checkbox" class="burger-checkbox" id="burger-checkbox" />
+        <label
+          for="burger-checkbox"
+          id="burger-menu"
+          class="burger-menu flex justify-between"
+        >
+          <span class="burger-bar"></span>
+          <span class="middle-box"></span>
+          <span class="burger-bar right-box"></span>
+        </label>
+
+        <ul id="navigation" class="hide" role="menu">
+          <li role="menuitem">
+            <a href="#">მთავარი</a>
+          </li>
+          <li role="menuitem">
+            <a href="#">TBC IT</a>
+          </li>
+          <li role="menuitem">
+            <a class="marked-route" href="#">TBC x USAID</a>
+          </li>
+          <li role="menuitem">
+            <a href="#">რისკები</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="technology-education-section flex justify-center">
+        <h1 class="fixed-size">
+          <span class="heading-1-span">TBC x USAID</span> <br />
+          <span>ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</span>
+        </h1>
+      </section>
+
+      <section class="describe-section">
+        <div class="describe-wrapper fixed-size flex">
+          <h2>
+            „ TBC x USAID - ტექნოლოგიური განათლებისთვის “ პროგრამა საინფორმაციო
+            ტექნოლოგიებით დაინტერესებულ ადამიანებს გთავაზობთ სრულად დაფინანსებულ
+            ონლაინ საგანმანათლებლო პრაქტიკულ კურსებს სხვადასხვა ICT
+            მიმართულებით. წარმატებულ კურსდამთავრებულებს ეძლევათ შესაძლებლობა
+            დასაქმდნენ თიბისისა და მის პარტნიორ კომპანიებში.
+          </h2>
+          <a class="details" href="#">გაიგე მეტი</a>
+        </div>
+      </section>
+
+      <section class="training-courses">
+        <h3 class="fixed-size">სასწავლო კურსები</h3>
+        <div class="cards-container" id="cards-container"></div>
+      </section>
+
+      <section class="slider flex">
+        <h3 class="fixed-size">პროექტის პარტნიორები</h3>
+        <div class="flex slider-images" id="slider-buttons">
+          <button id="left-button">
+            <img
+              src="assets/images/other/sliderArrow.svg"
+              alt="slider arrow icon"
+            />
+          </button>
+          <div class="slider-container flex" id="slider-container"></div>
+          <button id="right-button">
+            <img
+              src="assets/images/other/sliderArrow.svg"
+              alt="slider arrow icon"
+            />
+          </button>
+        </div>
+        <img src="assets/images/other/sliderNavigation.svg" alt="" />
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

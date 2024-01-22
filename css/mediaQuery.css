@@ -1,0 +1,46 @@
+@media (min-width: 768px) {
+  .hide {
+    display: flex;
+  }
+  ul {
+    position: static;
+    flex-direction: row;
+    text-align: left;
+    background-color: transparent;
+  }
+  .tbc-logo {
+    max-width: 18.2rem;
+    max-height: 4rem;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .card-description {
+    padding: 2.6rem 1.6rem 11.9rem 1.6rem;
+  }
+
+  .slider {
+    height: 36.34rem;
+  }
+
+  .slider button {
+    display: block;
+  }
+
+  .slider-container {
+    flex-direction: row;
+    gap: 10rem;
+  }
+  .slider-images {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    padding: 5.6rem 0;
+  }
+  header {
+    padding: 2.4rem 0;
+  }
+}
