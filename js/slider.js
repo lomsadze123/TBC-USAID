@@ -18,6 +18,7 @@ let currentPage = 0;
 let autoMove = true;
 let intervalId;
 
+// Functions
 const renderSliderSubset = () => {
   const startIndex = currentPage * slidersPerPage;
   const endIndex = startIndex + slidersPerPage;
@@ -26,16 +27,14 @@ const renderSliderSubset = () => {
 
   sliderData.slice(startIndex, endIndex).forEach((data, index) => {
     const sliderModel = new Item(data.image, data.title);
-    const isActive = index >= 0 && index < slidersPerPage;
-
     const sliderView = { renderSlider };
-
     const sliderController = new ItemController(
       sliderModel,
       sliderView,
       sliderContainer
     );
 
+    const isActive = index >= 0 && index < slidersPerPage;
     try {
       sliderController.renderSlider(isActive);
     } catch (error) {
@@ -55,16 +54,6 @@ const moveLeft = () => {
     Math.ceil(sliderData.length / slidersPerPage);
 };
 
-sliderButtonRight.addEventListener("click", () => {
-  moveRight();
-  renderSliderSubset();
-});
-
-sliderButtonLeft.addEventListener("click", () => {
-  moveLeft();
-  renderSliderSubset();
-});
-
 const startAutoMove = () => {
   clearInterval(intervalId); // Clear the interval at the beginning
 
@@ -77,6 +66,17 @@ const startAutoMove = () => {
 };
 
 startAutoMove();
+
+// Event listeners
+sliderButtonRight.addEventListener("click", () => {
+  moveRight();
+  renderSliderSubset();
+});
+
+sliderButtonLeft.addEventListener("click", () => {
+  moveLeft();
+  renderSliderSubset();
+});
 
 // Pause automatic movement when cursor is over the slider
 sliderButtons.addEventListener("mouseenter", () => {
@@ -94,7 +94,7 @@ const observer = new IntersectionObserver(
     autoMove = entries[0].isIntersecting;
     startAutoMove();
   },
-  { threshold: 0.5 } // Adjust the threshold as needed
+  { threshold: 0.5 }
 );
 
 observer.observe(sliderContainer);
