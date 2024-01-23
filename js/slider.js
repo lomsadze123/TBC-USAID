@@ -1,6 +1,6 @@
-import Item from "../mvc/model.js";
+import { ItemModel } from "../mvc/model.js";
 import ItemController from "../mvc/controller.js";
-import { sliderData } from "../mvc/data.js";
+import sliderData from "../data/sliderData.js";
 import { renderSlider } from "../mvc/view.js";
 
 // Constants
@@ -9,7 +9,7 @@ const AUTOMATIC_MOVE_INTERVAL = 2000;
 
 // Elements
 const sliderContainer = document.getElementById("slider-container");
-const sliderButtons = document.getElementById("slider-buttons");
+const sliderButtons = document.getElementById("slider-buttons-container");
 const sliderButtonLeft = document.getElementById("left-button");
 const sliderButtonRight = document.getElementById("right-button");
 
@@ -26,7 +26,7 @@ const renderSliderSubset = () => {
   sliderContainer.innerHTML = "";
 
   sliderData.slice(startIndex, endIndex).forEach((data, index) => {
-    const sliderModel = new Item(data.image, data.title);
+    const sliderModel = new ItemModel(data.image, data.title);
     const sliderView = { renderSlider };
     const sliderController = new ItemController(
       sliderModel,
@@ -42,6 +42,22 @@ const renderSliderSubset = () => {
     }
   });
 };
+
+const sliderNavigation = document.getElementById("slider-navigation");
+
+// Dynamically create navigation buttons based on the number of sets
+const createNavigationButtons = () => {
+  for (let i = 0; i < Math.ceil(sliderData.length / slidersPerPage); i++) {
+    const navButton = document.createElement("button");
+    navButton.addEventListener("click", () => {
+      currentPage = i;
+      renderSliderSubset();
+    });
+    sliderNavigation.appendChild(navButton);
+  }
+};
+
+createNavigationButtons();
 
 const moveRight = () => {
   currentPage =
@@ -85,7 +101,6 @@ sliderButtons.addEventListener("mouseenter", () => {
 
 // Resume automatic movement when cursor leaves the slider
 sliderButtons.addEventListener("mouseleave", () => {
-  startAutoMove();
   autoMove = true;
 });
 
@@ -98,5 +113,34 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(sliderContainer);
+
+let startX;
+let threshold = 50;
+
+const _handleTouchStart = (e) => {
+  startX = e.touches[0].clientX;
+};
+const _handleTouchMove = (e) => {
+  if (!startX) return;
+
+  const currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+
+  if (Math.abs(deltaX) >= threshold) {
+    if (deltaX > 0) {
+      console.log("2"); // Dragging to the right
+      moveLeft();
+    } else {
+      console.log("1"); // Dragging to the left
+      moveRight();
+    }
+
+    // Reset the start position to prevent continuous logging
+    startX = null;
+  }
+};
+
+sliderContainer.addEventListener("touchstart", _handleTouchStart);
+sliderContainer.addEventListener("touchmove", _handleTouchMove);
 
 export default renderSliderSubset;

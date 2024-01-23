@@ -1,3 +1,4 @@
+import renderAccordionQuestions from "./accordion.js";
 import renderCoursesCards from "./cards.js";
 import renderSliderSubset from "./slider.js";
 
@@ -14,4 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCoursesCards();
 
   renderSliderSubset();
+
+  renderAccordionQuestions();
 });

@@ -39,20 +39,22 @@
           <span class="burger-bar right-box"></span>
         </label>
 
-        <ul id="navigation" class="hide" role="menu">
-          <li role="menuitem">
-            <a href="#">მთავარი</a>
-          </li>
-          <li role="menuitem">
-            <a href="#">TBC IT</a>
-          </li>
-          <li role="menuitem">
-            <a class="marked-route" href="#">TBC x USAID</a>
-          </li>
-          <li role="menuitem">
-            <a href="#">რისკები</a>
-          </li>
-        </ul>
+        <div class="hide navigation-container" id="navigation">
+          <ul class="navigation-list" role="menu">
+            <li role="menuitem">
+              <a href="#">მთავარი</a>
+            </li>
+            <li role="menuitem">
+              <a href="#">TBC IT</a>
+            </li>
+            <li role="menuitem">
+              <a class="marked-route" href="#">TBC x USAID</a>
+            </li>
+            <li role="menuitem">
+              <a href="#">რისკები</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -84,25 +86,67 @@
 
       <section class="slider flex">
         <h3 class="fixed-size">პროექტის პარტნიორები</h3>
-        <div class="flex slider-images" id="slider-buttons">
-          <button id="left-button">
-            <img
-              src="assets/images/other/sliderArrow.svg"
-              alt="slider arrow icon"
-            />
-          </button>
-          <div class="slider-container flex" id="slider-container"></div>
-          <button id="right-button">
-            <img
-              src="assets/images/other/sliderArrow.svg"
-              alt="slider arrow icon"
-            />
-          </button>
+        <div
+          class="slider-images-container flex justify-center"
+          id="slider-buttons-container"
+        >
+          <div class="slider-buttons flex">
+            <button id="left-button">
+              <img
+                src="assets/images/other/sliderArrow.svg"
+                alt="slider arrow icon"
+              />
+            </button>
+            <div
+              class="slider-container flex justify-center"
+              id="slider-container"
+            ></div>
+            <button id="right-button">
+              <img
+                src="assets/images/other/sliderArrow.svg"
+                alt="slider arrow icon"
+              />
+            </button>
+          </div>
+          <nav class="slider-navigation flex" id="slider-navigation"></nav>
         </div>
-        <img src="assets/images/other/sliderNavigation.svg" alt="" />
+      </section>
+
+      <section class="accordion-parent-container">
+        <div class="flex fixed-size accordion-wrapper">
+          <h3>ხშირად დასმული კითხვები</h3>
+          <ul class="accordion-container" id="accordion-container"></ul>
+          <a class="details" href="#">ყველა კითხვა</a>
+        </div>
       </section>
     </main>
 
+    <footer class="footer-parent-container">
+      <div class="footer">
+        <img
+          class="footer-tbc-icon"
+          src="assets/images/icons/icon-tbc.png"
+          alt="tbc bank icon"
+        />
+        <div class="footer-info">
+          <button>მოგვწერეთ</button>
+          <div class="social-icons">
+            <img
+              src="assets/images/icons/icon-facebook.png"
+              alt="facebook icon"
+            />
+            <img
+              src="assets/images/icons/icon-youtube.png"
+              alt="youtube icon"
+            />
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="#">წესები და პირობები</a>
+          <small>© 2023&nbsp; <span>ყველა უფლება დაცულია</span></small>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>
