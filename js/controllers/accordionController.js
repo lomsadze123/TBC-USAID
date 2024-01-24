@@ -17,6 +17,7 @@ class AccordionController {
       const accordionItem = this.container.querySelector(
         `[data-accordion-id="${this.model.id}"]`
       );
+
       accordionItem.addEventListener("click", this.toggleAccordion);
     } else {
       console.error(
@@ -30,18 +31,17 @@ class AccordionController {
       `[data-accordion-id="${this.model.id}"]`
     );
 
-    // Check if the clicked accordion is currently open
     const isOpen = accordionItem.classList.contains("active");
 
     this.closeAllAccordions();
 
-    // If the clicked accordion was not the currently open one, open it
     if (!isOpen) {
       accordionItem.classList.add("active");
 
       // Set the answer and stages content for the opened accordion
       const answerStagesContainer =
         accordionItem.querySelector(".accordion-answer");
+
       answerStagesContainer.innerHTML = `
         ${this.model.intro ? `<p class="intro">${this.model.intro}</p>` : ""}
        ${
@@ -65,9 +65,9 @@ class AccordionController {
   }
 
   closeAllAccordions() {
-    // Close all accordion items
     const allAccordionItems =
       this.container.querySelectorAll(".accordion-item");
+
     allAccordionItems.forEach((item) => {
       item.classList.remove("active");
 

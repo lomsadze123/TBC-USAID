@@ -30,42 +30,6 @@ class AccordionView {
       return ""; // Return an empty string if stages is not an array or is empty
     }
   }
-
-  toggleAccordion(accordionId, answer, intro) {
-    const accordionItem = document.querySelector(
-      `[data-accordion-id="${accordionId}"]`
-    );
-
-    // Toggle the 'active' class for accordion-questions
-    const accordionQuestions = accordionItem.querySelector(
-      ".accordion-questions"
-    );
-    accordionQuestions.classList.toggle("active");
-
-    // Check if the accordion is now open or closed
-    const isOpen = accordionQuestions.classList.contains("active");
-
-    // Get the content container
-    const contentContainer = accordionItem.querySelector(".accordion-answer");
-
-    if (isOpen) {
-      // If open, show the content
-      contentContainer.innerHTML = `
-      ${intro ? `<p >${intro}</p>` : ""}
-      ${
-        this.model.stages
-          ? `<p class="stages-container">${this.renderStages(
-              this.model.stages
-            )}</p>`
-          : ""
-      }
-      <p class="answer-content">${answer}</p>
-      `;
-    } else {
-      // If closed, hide the content
-      contentContainer.innerHTML = "";
-    }
-  }
 }
 
 export default AccordionView;
