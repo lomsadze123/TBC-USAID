@@ -33,7 +33,6 @@ class AccordionController {
     // Check if the clicked accordion is currently open
     const isOpen = accordionItem.classList.contains("active");
 
-    // Close all accordion items
     this.closeAllAccordions();
 
     // If the clicked accordion was not the currently open one, open it
@@ -77,8 +76,6 @@ class AccordionController {
       answerStagesContainer.innerHTML = "";
     });
   }
-
-  // other methods...
 }
 
 export default AccordionController;

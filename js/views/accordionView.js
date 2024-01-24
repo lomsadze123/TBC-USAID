@@ -5,7 +5,7 @@ class AccordionView {
 
     return `
       <li class="accordion-item" data-accordion-id="${id}">
-        <div class="accordion-questions flex justify-between ${activeClass}">
+        <div class="accordion-questions ${activeClass}">
           <p class="accordion-question">${question}</p>
           <img src="assets/images/other/accordionArrow.svg" alt="arrow down icon">
         </div>

@@ -1,7 +1,7 @@
-import { ItemModel } from "../mvc/model.js";
-import ItemController from "../mvc/controller.js";
-import sliderData from "../data/sliderData.js";
-import { renderSlider } from "../mvc/view.js";
+import CommonModel from "../../js/models/commonModel.js";
+import SliderController from "../../js/controllers/sliderController.js";
+import sliderData from "../../data/sliderData.js";
+import renderSlider from "../../js/views/sliderView.js";
 
 // Constants
 const slidersPerPage = 3;
@@ -26,9 +26,9 @@ const renderSliderSubset = () => {
   sliderContainer.innerHTML = "";
 
   sliderData.slice(startIndex, endIndex).forEach((data, index) => {
-    const sliderModel = new ItemModel(data.image, data.title);
+    const sliderModel = new CommonModel(data.image, data.title);
     const sliderView = { renderSlider };
-    const sliderController = new ItemController(
+    const sliderController = new SliderController(
       sliderModel,
       sliderView,
       sliderContainer
@@ -114,33 +114,40 @@ const observer = new IntersectionObserver(
 
 observer.observe(sliderContainer);
 
-let startX;
-let threshold = 50;
+// ... (existing code)
 
-const _handleTouchStart = (e) => {
-  startX = e.touches[0].clientX;
-};
-const _handleTouchMove = (e) => {
-  if (!startX) return;
+// Variables to track touch start position
+let touchStartX = 0;
+let touchEndX = 0;
 
-  const currentX = e.touches[0].clientX;
-  const deltaX = currentX - startX;
+// Touch event listeners
+sliderContainer.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+});
 
-  if (Math.abs(deltaX) >= threshold) {
-    if (deltaX > 0) {
-      console.log("2"); // Dragging to the right
-      moveLeft();
-    } else {
-      console.log("1"); // Dragging to the left
-      moveRight();
-    }
+sliderContainer.addEventListener("touchmove", (e) => {
+  touchEndX = e.touches[0].clientX;
+  startAutoMove();
+});
 
-    // Reset the start position to prevent continuous logging
-    startX = null;
+sliderContainer.addEventListener("touchend", () => {
+  // Calculate the difference between touch start and touch end positions
+  const touchDiff = touchEndX - touchStartX;
+
+  // Define a threshold for considering it as a swipe
+  const swipeThreshold = 50;
+
+  if (touchDiff > swipeThreshold) {
+    // Swipe right
+    moveLeft();
+    renderSliderSubset();
+  } else if (touchDiff < -swipeThreshold) {
+    // Swipe left
+    moveRight();
+    renderSliderSubset();
   }
-};
+});
 
-sliderContainer.addEventListener("touchstart", _handleTouchStart);
-sliderContainer.addEventListener("touchmove", _handleTouchMove);
+// ... (existing code)
 
 export default renderSliderSubset;

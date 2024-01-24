@@ -1,7 +1,7 @@
-import { AccordionModel } from "../mvc/model.js";
-import AccordionView from "../mvc/accordionView.js"; // Import the AccordionView class
-import AccordionController from "../mvc/accordionController.js";
-import accordionData from "../data/accordionData.js";
+import AccordionModel from "../../js/models/accordionModel.js";
+import AccordionView from "../../js/views/accordionView.js"; // Import the AccordionView class
+import AccordionController from "../../js/controllers/accordionController.js";
+import accordionData from "../../data/accordionData.js";
 
 const renderAccordionQuestions = () => {
   // Assuming you have a container element where you want to append the accordion

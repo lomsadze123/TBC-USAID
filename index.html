@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Unlock your potential with TBC-USAID Academy - a platform dedicated to advancing your career through technology education. Explore cutting-edge courses, gain practical skills, and connect with industry partners. Elevate your career prospects with TBC USAID Academy."
+    />
+
     <title>TBC x USAID</title>
     <link
       rel="icon"
@@ -17,11 +22,17 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/burgerMenu.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="components/cards/cards.css" />
+    <link rel="stylesheet" href="components/slider/slider.css" />
+    <link rel="stylesheet" href="components/accordion/accordion.css" />
+
+    <!-- Media Queries -->
     <link rel="stylesheet" href="css/mediaQuery.css" />
   </head>
   <body>
-    <header class="flex justify-center">
-      <nav class="flex justify-between fixed-size">
+    <header>
+      <nav class="fixed-size">
         <img
           class="tbc-logo"
           src="assets/images/other/TBClogo.svg"
@@ -32,7 +43,8 @@
         <label
           for="burger-checkbox"
           id="burger-menu"
-          class="burger-menu flex justify-between"
+          class="burger-menu"
+          aria-controls="navigation"
         >
           <span class="burger-bar"></span>
           <span class="middle-box"></span>
@@ -42,7 +54,7 @@
         <div class="hide navigation-container" id="navigation">
           <ul class="navigation-list" role="menu">
             <li role="menuitem">
-              <a href="#">მთავარი</a>
+              <a href="#" lang="ka">მთავარი</a>
             </li>
             <li role="menuitem">
               <a href="#">TBC IT</a>
@@ -51,7 +63,7 @@
               <a class="marked-route" href="#">TBC x USAID</a>
             </li>
             <li role="menuitem">
-              <a href="#">რისკები</a>
+              <a href="#" lang="ka">რისკები</a>
             </li>
           </ul>
         </div>
@@ -59,48 +71,42 @@
     </header>
 
     <main>
-      <section class="technology-education-section flex justify-center">
+      <section class="technology-education-section">
         <h1 class="fixed-size">
           <span class="heading-1-span">TBC x USAID</span> <br />
-          <span>ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</span>
+          <span lang="ka">ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</span>
         </h1>
       </section>
 
       <section class="describe-section">
-        <div class="describe-wrapper fixed-size flex">
-          <h2>
+        <div class="describe-wrapper fixed-size">
+          <h2 lang="ka">
             „ TBC x USAID - ტექნოლოგიური განათლებისთვის “ პროგრამა საინფორმაციო
             ტექნოლოგიებით დაინტერესებულ ადამიანებს გთავაზობთ სრულად დაფინანსებულ
             ონლაინ საგანმანათლებლო პრაქტიკულ კურსებს სხვადასხვა ICT
             მიმართულებით. წარმატებულ კურსდამთავრებულებს ეძლევათ შესაძლებლობა
             დასაქმდნენ თიბისისა და მის პარტნიორ კომპანიებში.
           </h2>
-          <a class="details" href="#">გაიგე მეტი</a>
+          <a class="details" href="#" lang="ka">გაიგე მეტი</a>
         </div>
       </section>
 
       <section class="training-courses">
-        <h3 class="fixed-size">სასწავლო კურსები</h3>
+        <h3 class="fixed-size" lang="ka">სასწავლო კურსები</h3>
         <div class="cards-container" id="cards-container"></div>
       </section>
 
-      <section class="slider flex">
-        <h3 class="fixed-size">პროექტის პარტნიორები</h3>
-        <div
-          class="slider-images-container flex justify-center"
-          id="slider-buttons-container"
-        >
-          <div class="slider-buttons flex">
+      <section class="slider">
+        <h3 class="fixed-size" lang="ka">პროექტის პარტნიორები</h3>
+        <div class="slider-images-container" id="slider-buttons-container">
+          <div class="slider-buttons">
             <button id="left-button">
               <img
                 src="assets/images/other/sliderArrow.svg"
                 alt="slider arrow icon"
               />
             </button>
-            <div
-              class="slider-container flex justify-center"
-              id="slider-container"
-            ></div>
+            <div class="slider-container" id="slider-container"></div>
             <button id="right-button">
               <img
                 src="assets/images/other/sliderArrow.svg"
@@ -108,15 +114,15 @@
               />
             </button>
           </div>
-          <nav class="slider-navigation flex" id="slider-navigation"></nav>
+          <nav class="slider-navigation" id="slider-navigation"></nav>
         </div>
       </section>
 
       <section class="accordion-parent-container">
-        <div class="flex fixed-size accordion-wrapper">
-          <h3>ხშირად დასმული კითხვები</h3>
+        <div class="accordion-wrapper fixed-size">
+          <h3 lang="ka">ხშირად დასმული კითხვები</h3>
           <ul class="accordion-container" id="accordion-container"></ul>
-          <a class="details" href="#">ყველა კითხვა</a>
+          <a class="details" href="#" lang="ka">ყველა კითხვა</a>
         </div>
       </section>
     </main>
@@ -129,24 +135,31 @@
           alt="tbc bank icon"
         />
         <div class="footer-info">
-          <button>მოგვწერეთ</button>
+          <button lang="ka">მოგვწერეთ</button>
           <div class="social-icons">
-            <img
-              src="assets/images/icons/icon-facebook.png"
-              alt="facebook icon"
-            />
-            <img
-              src="assets/images/icons/icon-youtube.png"
-              alt="youtube icon"
-            />
+            <a href="#">
+              <img
+                src="assets/images/icons/icon-facebook.png"
+                alt="facebook icon"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/images/icons/icon-youtube.png"
+                alt="youtube icon"
+              />
+            </a>
           </div>
         </div>
         <div class="copyright">
-          <a href="#">წესები და პირობები</a>
-          <small>© 2023&nbsp; <span>ყველა უფლება დაცულია</span></small>
+          <a href="#" lang="ka">წესები და პირობები</a>
+          <small
+            >© 2023&nbsp; <span lang="ka">ყველა უფლება დაცულია</span></small
+          >
         </div>
       </div>
     </footer>
-    <script type="module" src="js/app.js"></script>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

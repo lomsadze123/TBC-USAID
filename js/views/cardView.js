@@ -1,4 +1,4 @@
-export const renderCard = (card) => {
+const renderCard = (card) => {
   return `
     <div class="card">
       <img loading="lazy" src="${card.image}" alt="${card.title}">
@@ -6,7 +6,7 @@ export const renderCard = (card) => {
         <h2>${card.title}</h2>
         <p>რეგისტრაცია დასრულებულია</p>
       </div>
-      <a class="details flex">
+      <a class="details">
         <span>
           <img class="arrow-right" src="assets/images/other/arrowRight.svg" alt="right arrow icon">
         </span>
@@ -16,9 +16,4 @@ export const renderCard = (card) => {
   `;
 };
 
-export const renderSlider = (slider, isActive) => {
-  const activeClass = isActive ? "slider-active" : "";
-  return `
-    <img loading="lazy" src="${slider.image}" alt="${slider.title}" class="${activeClass}">
-  `;
-};
+export default renderCard;

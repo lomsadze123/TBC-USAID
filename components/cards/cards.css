@@ -1,0 +1,51 @@
+.training-courses {
+  background-color: var(--primary-color-almostBlack);
+  padding: 0 2.4rem 4.4rem 2.4rem;
+}
+
+.training-courses h3 {
+  padding: 2rem 0 2.6rem 0;
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--main-text-color);
+}
+
+.cards-container {
+  margin: 0 auto;
+  max-width: 98rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 0.6rem;
+}
+
+.card-description {
+  padding: 2.6rem 1.6rem;
+}
+
+.card-description h2 {
+  font-size: 1.8rem;
+}
+
+.card-description p {
+  font-size: 1.6rem;
+  margin: 1.2rem 0 0 0;
+}
+
+.cards-container a {
+  display: flex;
+  padding: 0 2.4rem;
+  margin: 0 0 2.4rem 0;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.cards-container img {
+  width: 100%;
+  border-radius: 0.6rem 0.6rem 0 0;
+}

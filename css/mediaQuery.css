@@ -2,28 +2,36 @@
   .hide {
     display: flex;
   }
+
   .navigation-container {
     position: static;
     height: 100%;
     background-color: transparent;
   }
+
   .navigation-list {
     flex-direction: row;
-    text-align: left;
     background-color: transparent;
     width: 100%;
     padding: 0;
     align-items: center;
   }
+
   .tbc-logo {
     max-width: 18.2rem;
     max-height: 4rem;
   }
+
   .burger-menu {
     display: none;
   }
+
   .card-description {
     padding: 2.6rem 1.6rem 11.9rem 1.6rem;
+  }
+
+  .training-courses h3 {
+    padding: 2.6rem 0 7rem;
   }
 
   .slider {
@@ -37,35 +45,43 @@
   .slider-container {
     gap: 3rem 10rem;
   }
+
   .slider-buttons {
     justify-content: space-between;
+    align-items: center;
+    height: 19.6rem;
+  }
+
+  .accordion-parent-container {
+    padding: 9.5rem 0;
   }
 
   .accordion-container {
     order: 1;
     flex-grow: 1;
   }
+
   .accordion-wrapper {
     padding: 0 2rem;
     justify-content: space-between;
   }
+
   .accordion-questions {
     justify-content: space-between;
+  }
+
+  .accordion-item {
+    padding: 0 0 3rem 0;
   }
 
   .footer {
     max-width: 105rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
-    padding: 4.3rem 2.4rem;
-    background-color: var(--footer-color-strangeBlack);
+    padding: 5.8rem 2.4rem 3.6rem 2.4rem;
   }
 
   .footer-tbc-icon {
-    width: 100%;
-    height: auto;
-    max-width: 10.6rem;
     grid-column: 1 / span 1;
     grid-row: 1;
   }
@@ -73,35 +89,20 @@
   .footer-info {
     grid-column: 1 / span 1;
     grid-row: 1 / span 3;
-    display: flex;
     flex-direction: column-reverse;
     align-items: flex-end;
     margin: 0;
   }
 
   .social-icons img {
-    width: 100%;
-    height: auto;
-    max-width: 3.5rem;
-  }
-
-  .footer button {
-    padding: 0.8rem 1.4rem;
-    border-radius: 0.8rem;
-    font-size: 1.8rem;
-    background-color: var(--routing-text-color-blue);
-    color: white;
-    border: 0;
+    max-width: 3.9rem;
   }
 
   .copyright {
     grid-column: 1 / span 1;
     grid-row: 2;
-    display: flex;
     flex-direction: column-reverse;
-    gap: 1.5rem;
-    color: var(--main-text-color);
-    font-size: 1.8rem;
+    width: 33%;
   }
 
   .footer button {
@@ -110,14 +111,79 @@
 }
 
 @media (min-width: 1024px) {
+  .heading-1-span {
+    font-size: 4.5rem;
+  }
+
   h1 {
+    padding: 10rem 0;
+    font-size: 4rem;
+    line-height: 7rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    line-height: 4.5rem;
+  }
+
+  .describe-section {
     padding: 5.6rem 0;
   }
+
   header {
     padding: 2.4rem 0;
   }
+
   .slider-container {
     flex-wrap: nowrap;
     align-items: center;
+  }
+
+  .slider-buttons {
+    height: 8.5rem;
+  }
+
+  /* Hovers with animation and cursor-pointer */
+  .tbc-logo,
+  .card a,
+  .slider-buttons button,
+  .slider-navigation button,
+  .accordion-container li div:first-child,
+  .social-icons img,
+  .footer-info button {
+    cursor: pointer;
+  }
+
+  .card a,
+  .slider-buttons img,
+  .copyright a {
+    transition: opacity 0.2s ease-in;
+  }
+
+  .footer-info button {
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  }
+
+  .footer-info button:hover {
+    color: var(--border-color-silver);
+    background-color: var(--burger-menu-color-grey);
+  }
+
+  .navigation-list a {
+    transition: color 0.2s ease-in;
+  }
+
+  .navigation-list a:hover {
+    color: var(--routing-text-color-blue);
+  }
+
+  .details:hover:not(.card a) {
+    color: var(--main-text-color);
+  }
+
+  .card a:hover,
+  .slider-buttons button:hover,
+  .copyright a:hover {
+    opacity: 0.8;
   }
 }

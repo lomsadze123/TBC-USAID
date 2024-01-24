@@ -1,6 +1,6 @@
-import renderAccordionQuestions from "./accordion.js";
-import renderCoursesCards from "./cards.js";
-import renderSliderSubset from "./slider.js";
+import renderAccordionQuestions from "../components/accordion/accordion.js";
+import renderCoursesCards from "../components/cards/cards.js";
+import renderSliderSubset from "../components/slider/slider.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burger-menu");

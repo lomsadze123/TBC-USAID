@@ -1,11 +1,4 @@
-export class ItemModel {
-  constructor(image, title) {
-    this.image = image;
-    this.title = title;
-  }
-}
-
-export class AccordionModel {
+class AccordionModel {
   constructor(id, question, intro, answer, stages, isOpen) {
     this.id = id;
     this.question = question;
@@ -19,3 +12,5 @@ export class AccordionModel {
     this.isOpen = !this.isOpen;
   }
 }
+
+export default AccordionModel;
