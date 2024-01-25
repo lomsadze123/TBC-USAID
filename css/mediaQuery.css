@@ -1,8 +1,13 @@
 @media (min-width: 768px) {
+  .overflow-hidden {
+    overflow: auto;
+  }
+
   .hide {
     display: flex;
   }
 
+  /* Adjusting navigation container styles */
   .navigation-container {
     position: static;
     height: 100%;
@@ -11,10 +16,10 @@
 
   .navigation-list {
     flex-direction: row;
-    background-color: transparent;
+    align-items: center;
     width: 100%;
     padding: 0;
-    align-items: center;
+    background-color: transparent;
   }
 
   .tbc-logo {
@@ -22,6 +27,7 @@
     max-height: 4rem;
   }
 
+  /* Hiding burger menu on larger screens */
   .burger-menu {
     display: none;
   }
@@ -62,8 +68,8 @@
   }
 
   .accordion-wrapper {
-    padding: 0 2rem;
     justify-content: space-between;
+    padding: 0 2rem;
   }
 
   .accordion-questions {
@@ -75,9 +81,9 @@
   }
 
   .footer {
-    max-width: 105rem;
     display: grid;
     gap: 2rem;
+    max-width: 105rem;
     padding: 5.8rem 2.4rem 3.6rem 2.4rem;
   }
 
@@ -143,7 +149,7 @@
     height: 8.5rem;
   }
 
-  /* Hovers with animation and cursor-pointer */
+  /* Adding hover styles and cursor-pointer for various elements */
   .tbc-logo,
   .card a,
   .slider-buttons button,
@@ -154,6 +160,7 @@
     cursor: pointer;
   }
 
+  /* Adding transition effect for certain elements */
   .card a,
   .slider-buttons img,
   .copyright a {
@@ -181,6 +188,7 @@
     color: var(--main-text-color);
   }
 
+  /* Hover effect for card links, slider buttons, and copyright links */
   .card a:hover,
   .slider-buttons button:hover,
   .copyright a:hover {

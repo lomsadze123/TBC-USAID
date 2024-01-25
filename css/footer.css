@@ -2,9 +2,9 @@
   background-color: var(--footer-color-strangeBlack);
 }
 .footer {
-  margin: 0 auto;
   max-width: 61rem;
   padding: 4.3rem 2.4rem;
+  margin: 0 auto;
 }
 
 .footer-tbc-icon {
@@ -25,6 +25,7 @@
   max-width: 3.5rem;
 }
 
+/* Styles for spacing between social icons */
 .social-icons a + a {
   margin: 0 0 0 1.5rem;
 }
@@ -32,16 +33,16 @@
 .footer button {
   padding: 0.8rem 1.4rem;
   border-radius: 0.8rem;
-  font-size: 1.8rem;
-  background-color: var(--routing-text-color-blue);
-  color: white;
   border: 0;
+  font-size: 1.8rem;
+  color: white;
+  background-color: var(--routing-text-color-blue);
 }
 
 .copyright {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: var(--main-text-color);
   font-size: 1.8rem;
+  color: var(--main-text-color);
 }

@@ -26,9 +26,8 @@ class AccordionView {
     // Check if stages is an array and not empty before using map
     if (Array.isArray(stages) && stages.length > 0) {
       return stages.map((stage) => `<p>${stage}</p>`).join("");
-    } else {
-      return ""; // Return an empty string if stages is not an array or is empty
     }
+    return ""; // Return an empty string if stages is not an array or is empty
   }
 }
 

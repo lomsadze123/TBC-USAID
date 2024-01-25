@@ -1,3 +1,4 @@
+// AccordionController class handles the rendering and interactions of accordion items.
 class AccordionController {
   constructor(model, view, container) {
     this.model = model;
@@ -8,6 +9,7 @@ class AccordionController {
     this.toggleAccordion = this.toggleAccordion.bind(this);
   }
 
+  // Renders the accordion item and attaches event listeners for accordion interactions.
   renderAccordion() {
     if (typeof this.view.renderAccordionItem === "function") {
       const html = this.view.renderAccordionItem(this.model);
@@ -26,6 +28,7 @@ class AccordionController {
     }
   }
 
+  // Toggles the state of the accordion item and updates its content accordingly.
   toggleAccordion() {
     const accordionItem = this.container.querySelector(
       `[data-accordion-id="${this.model.id}"]`
@@ -64,6 +67,7 @@ class AccordionController {
     }
   }
 
+  // Closes all accordion items and clears their content.
   closeAllAccordions() {
     const allAccordionItems =
       this.container.querySelectorAll(".accordion-item");

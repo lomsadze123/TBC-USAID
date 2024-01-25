@@ -1,10 +1,10 @@
 .slider {
   display: flex;
-  padding: 2.4rem 2.4rem 0 2.4rem;
-  height: 43rem;
   flex-direction: column;
-  background-color: var(--secondary-color-grey);
   gap: 3rem;
+  height: 43rem;
+  padding: 2.4rem 2.4rem 0 2.4rem;
+  background-color: var(--secondary-color-grey);
 }
 
 .slider h3 {
@@ -14,18 +14,18 @@
 
 .slider-images-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
   flex-grow: 1;
 }
 
 .slider-buttons {
-  width: 100%;
-  max-width: 150rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 150rem;
 }
 
 .slider-container {
@@ -42,9 +42,9 @@
 
 .slider button {
   display: none;
-  background-color: transparent;
   border: 0;
   outline: 0;
+  background-color: transparent;
 }
 
 .slider button img {
@@ -62,9 +62,13 @@
 }
 
 .slider-navigation button {
-  background-color: var(--burger-menu-color-grey);
-  padding: 0.35rem;
   border-radius: 80%;
+  padding: 0.35rem;
+  background-color: var(--burger-menu-color-grey);
+}
+
+.slider-active {
+  animation: blink 2s ease;
 }
 
 @keyframes blink {
@@ -74,8 +78,4 @@
   100% {
     opacity: 1;
   }
-}
-
-.slider-active {
-  animation: blink 2s ease;
 }

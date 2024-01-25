@@ -1,8 +1,13 @@
+label {
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
 .burger-menu {
+  flex-direction: column;
   width: 2.6rem;
   height: 2.1rem;
-
-  flex-direction: column;
 }
 
 .burger-bar,
@@ -21,10 +26,12 @@
   margin: 0 0 0 auto;
 }
 
+/* Transition effect for the middle box in the burger menu */
 .middle-box {
   transition: all 0.3s ease;
 }
 
+/* Transition effect for the burger bars in the menu */
 .burger-bar {
   transition: transform 0.33s cubic-bezier(0.54, -0.81, 0.57, 0.57);
 }
@@ -37,6 +44,7 @@
   transform-origin: left;
 }
 
+/* Styles for the checked state of the burger checkbox */
 .burger-checkbox:checked + .burger-menu .burger-bar:first-child {
   transform: rotate(-135deg) translate(0.6rem, -0.4rem);
 }

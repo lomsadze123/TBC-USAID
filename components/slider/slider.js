@@ -8,22 +8,24 @@ const slidersPerPage = 3;
 const AUTOMATIC_MOVE_INTERVAL = 2000;
 
 // Elements
-const sliderContainer = document.getElementById("slider-container");
-const sliderButtons = document.getElementById("slider-buttons-container");
-const sliderButtonLeft = document.getElementById("left-button");
-const sliderButtonRight = document.getElementById("right-button");
+const elements = {
+  sliderContainer: document.getElementById("slider-container"),
+  buttons: document.getElementById("slider-buttons-container"),
+  buttonLeft: document.getElementById("left-button"),
+  buttonRight: document.getElementById("right-button"),
+  navigation: document.getElementById("slider-navigation"),
+};
 
 // State
 let currentPage = 0;
 let autoMove = true;
 let intervalId;
 
-// Functions
 const renderSliderSubset = () => {
   const startIndex = currentPage * slidersPerPage;
   const endIndex = startIndex + slidersPerPage;
 
-  sliderContainer.innerHTML = "";
+  elements.sliderContainer.innerHTML = "";
 
   sliderData.slice(startIndex, endIndex).forEach((data, index) => {
     const sliderModel = new CommonModel(data.image, data.title);
@@ -31,7 +33,7 @@ const renderSliderSubset = () => {
     const sliderController = new SliderController(
       sliderModel,
       sliderView,
-      sliderContainer
+      elements.sliderContainer
     );
 
     const isActive = index >= 0 && index < slidersPerPage;
@@ -43,8 +45,6 @@ const renderSliderSubset = () => {
   });
 };
 
-const sliderNavigation = document.getElementById("slider-navigation");
-
 // Dynamically create navigation buttons based on the number of sets
 const createNavigationButtons = () => {
   for (let i = 0; i < Math.ceil(sliderData.length / slidersPerPage); i++) {
@@ -53,7 +53,7 @@ const createNavigationButtons = () => {
       currentPage = i;
       renderSliderSubset();
     });
-    sliderNavigation.appendChild(navButton);
+    elements.navigation.appendChild(navButton);
   }
 };
 
@@ -83,71 +83,82 @@ const startAutoMove = () => {
 
 startAutoMove();
 
-// Event listeners
-sliderButtonRight.addEventListener("click", () => {
-  moveRight();
-  renderSliderSubset();
-});
-
-sliderButtonLeft.addEventListener("click", () => {
-  moveLeft();
-  renderSliderSubset();
-});
-
-// Pause automatic movement when cursor is over the slider
-sliderButtons.addEventListener("mouseenter", () => {
-  autoMove = false;
-});
-
-// Resume automatic movement when cursor leaves the slider
-sliderButtons.addEventListener("mouseleave", () => {
-  autoMove = true;
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    autoMove = entries[0].isIntersecting;
-    startAutoMove();
-  },
-  { threshold: 0.5 }
-);
-
-observer.observe(sliderContainer);
-
-// ... (existing code)
-
-// Variables to track touch start position
-let touchStartX = 0;
-let touchEndX = 0;
-
-// Touch event listeners
-sliderContainer.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX;
-});
-
-sliderContainer.addEventListener("touchmove", (e) => {
-  touchEndX = e.touches[0].clientX;
-  startAutoMove();
-});
-
-sliderContainer.addEventListener("touchend", () => {
-  // Calculate the difference between touch start and touch end positions
-  const touchDiff = touchEndX - touchStartX;
-
-  // Define a threshold for considering it as a swipe
-  const swipeThreshold = 50;
-
-  if (touchDiff > swipeThreshold) {
-    // Swipe right
-    moveLeft();
-    renderSliderSubset();
-  } else if (touchDiff < -swipeThreshold) {
-    // Swipe left
+// Attach event listeners for button clicks and mouse events
+const slidersMovement = () => {
+  elements.buttonRight.addEventListener("click", () => {
     moveRight();
     renderSliderSubset();
-  }
-});
+  });
 
-// ... (existing code)
+  elements.buttonLeft.addEventListener("click", () => {
+    moveLeft();
+    renderSliderSubset();
+  });
+};
+
+slidersMovement();
+
+const handleSlider = () => {
+  // Pause automatic movement when cursor is over the slider
+  elements.buttons.addEventListener("mouseenter", () => {
+    autoMove = false;
+  });
+
+  // Resume automatic movement when cursor leaves the slider
+  elements.buttons.addEventListener("mouseleave", () => {
+    autoMove = true;
+  });
+};
+
+handleSlider();
+
+// Handle touch events for swipe gestures
+const handleTouch = () => {
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  elements.sliderContainer.addEventListener("touchstart", (e) => {
+    const { clientX } = e.touches[0];
+    touchStartX = clientX;
+  });
+
+  elements.sliderContainer.addEventListener("touchmove", (e) => {
+    touchEndX = e.touches[0].clientX;
+    startAutoMove();
+  });
+
+  elements.sliderContainer.addEventListener("touchend", () => {
+    // Calculate the difference between touch start and touch end positions
+    const touchDiff = touchEndX - touchStartX;
+
+    // Define a threshold for considering it as a swipe
+    const swipeThreshold = 50;
+
+    if (touchDiff > swipeThreshold) {
+      moveLeft();
+      renderSliderSubset();
+    } else if (touchDiff < -swipeThreshold) {
+      moveRight();
+      renderSliderSubset();
+    }
+  });
+};
+
+handleTouch();
+
+// Handle slider visibility using Intersection Observer
+const observerFunction = () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      autoMove = entries[0].isIntersecting;
+      startAutoMove();
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(elements.sliderContainer);
+};
+
+observerFunction();
 
 export default renderSliderSubset;

@@ -3,9 +3,9 @@ import CardController from "../../js/controllers/cardController.js";
 import cardData from "../../data/cardData.js";
 import renderCard from "../../js/views/cardView.js";
 
-const cardsContainer = document.getElementById("cards-container");
-
 const renderCoursesCards = () => {
+  const cardsContainer = document.getElementById("cards-container");
+
   // Iterate over cardData and create Card, cardView, and CardController instances
   cardData.forEach((data) => {
     // Create Card instance

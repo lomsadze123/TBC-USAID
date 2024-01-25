@@ -1,3 +1,4 @@
+// SliderController class handles the rendering of slider items.
 class SliderController {
   constructor(model, view, container) {
     this.model = model;
@@ -5,6 +6,7 @@ class SliderController {
     this.container = container;
   }
 
+  // Renders the slider item and appends it to the specified container.
   renderSlider(isActive) {
     if (typeof this.view.renderSlider === "function") {
       const html = this.view.renderSlider(this.model, isActive);

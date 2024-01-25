@@ -1,5 +1,5 @@
+/* Styles for the accordion wrapper, which contains individual accordion items. */
 .accordion-parent-container {
-  background-color: var(--primary-color-almostBlack);
   padding: 5rem 1.6rem;
   margin: 0 auto;
 }
@@ -67,10 +67,6 @@
   to {
     max-height: 1000px;
   }
-}
-
-.accordion-item {
-  overflow: hidden;
 }
 
 .active {
