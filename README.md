@@ -25,7 +25,7 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 - **HTML**, **CSS**, **JavaScript:** The core web technologies for building the front-end user interface.
 - **ES6 Modules:** Modular JavaScript for maintaining code organization and reusability.
-  **MVC Architecture:** Adopted a Model-View-Controller architecture for better organization and maintainability of the code.
+- **MVC Architecture:** Adopted a Model-View-Controller architecture for better organization and maintainability of the code.
 - **Intersection Observer API:** Utilized to implement scroll-based interactions and optimize performance.
 - **Responsive Design:** Ensures a seamless user experience across various devices and screen sizes.
 - **Lazy Loading:** Implemented for optimizing image loading and improving page load times.
