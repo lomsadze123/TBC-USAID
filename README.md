@@ -15,8 +15,11 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 ## Screenshots
 
-![image](https://github.com/lomsadze123/TBC-USAID/assets/91826108/1ae22938-7239-4986-8af0-3f266c09f31d) ![image](https://github.com/lomsadze123/TBC-USAID/assets/91826108/987126e3-8666-470b-9058-f005e1a167be) ![image](https://github.com/lomsadze123/TBC-USAID/assets/91826108/2ccbc353-cde5-4847-ad2f-4eeaf5f41bcd)
-
+<p align="center">
+  <img src="https://github.com/lomsadze123/TBC-USAID/assets/91826108/1ae22938-7239-4986-8af0-3f266c09f31d" alt="Image 1">
+  <img src="https://github.com/lomsadze123/TBC-USAID/assets/91826108/987126e3-8666-470b-9058-f005e1a167be" alt="Image 2">
+  <img src="https://github.com/lomsadze123/TBC-USAID/assets/91826108/2ccbc353-cde5-4847-ad2f-4eeaf5f41bcd" alt="Image 3">
+</p>
 
 ## Technologies Used
 
