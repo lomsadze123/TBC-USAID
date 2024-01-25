@@ -35,12 +35,11 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 - **ScrollHandle Functionality:** Implemented a `scrollHandle` function that efficiently manages scroll events, adjusting the appearance and behavior of the header based on the user's scrolling actions.
 
-````javascript
+```javascript
 const scrollHandle = () => {
   window.addEventListener("scroll", throttledHandleScroll);
 };
 ```
-
 
 ## Tools & Platforms
 
@@ -68,7 +67,7 @@ project-root
     ├───controllers
     ├───models
     └───views
-````
+```
 
 The project follows a structured organization to maintain clarity and modularity:
 
