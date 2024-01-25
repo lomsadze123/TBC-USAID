@@ -29,6 +29,17 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 - **Intersection Observer API:** Utilized to implement scroll-based interactions and optimize performance.
 - **Responsive Design:** Ensures a seamless user experience across various devices and screen sizes.
 - **Lazy Loading:** Implemented for optimizing image loading and improving page load times.
+- **Throttling:** Incorporated throttling techniques to control the rate of execution of certain functions, preventing performance bottlenecks and improving overall responsiveness.
+
+### Scroll Handling
+
+- **ScrollHandle Functionality:** Implemented a `scrollHandle` function that efficiently manages scroll events, adjusting the appearance and behavior of the header based on the user's scrolling actions.
+
+````javascript
+const scrollHandle = () => {
+  window.addEventListener("scroll", throttledHandleScroll);
+};
+
 
 ## Tools & Platforms
 
@@ -55,7 +66,7 @@ project-root
     ├───controllers
     ├───models
     └───views
-```
+````
 
 The project follows a structured organization to maintain clarity and modularity:
 
@@ -98,6 +109,7 @@ Explore the courses and programs available on the TBC-USAID Academy platform.
 - Slider
 - Accordion
 - Model-View-Controller (MVC) Architecture
+- Throttling
 
 ## Usage
 
@@ -107,7 +119,7 @@ Explore the courses and programs available on the TBC-USAID Academy platform.
 
 - **Scroll Events:**
 
-  Observe scroll-based events, such as the appearance and disappearance of the fixed header.
+  Observe scroll-based events, such as the appearance and disappearance of the fixed header. The `scrollHandle` function optimizes the handling of scroll events, ensuring a smooth and responsive scrolling experience.
 
 - **Lazy Loading:**
   Experience optimized image loading with lazy loading.
@@ -115,40 +127,21 @@ Explore the courses and programs available on the TBC-USAID Academy platform.
 ## Usage/Examples
 
 ```javascript
-// model
-class CommonModel {
-  constructor(image, title) {
-    this.image = image;
-    this.title = title;
-  }
-}
-
-// view
-const renderSlider = (slider, isActive) => {
-  const activeClass = isActive ? "slider-active" : "";
-  return `
-    <img loading="lazy" src="${slider.image}" alt="${slider.title}" class="${activeClass}">
-  `;
-};
-
-// controller
-class SliderController {
-  constructor(model, view, container) {
-    this.model = model;
-    this.view = view;
-    this.container = container;
-  }
-
-  // Renders the slider item and appends it to the specified container.
-  renderSlider(isActive) {
-    if (typeof this.view.renderSlider === "function") {
-      const html = this.view.renderSlider(this.model, isActive);
-      this.container.insertAdjacentHTML("beforeend", html);
-    } else {
-      console.error("Unsupported view type: renderSlider method not found");
+// Create an Intersection Observer to track when the slider container is in vie
+const observer = new IntersectionObserver(w
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      // Additional actions to take when the slider is in view
+      console.log("Slider is in view!");
+      // You can trigger functions like autoMove or startAutoMove here
     }
-  }
-}
+  },
+  { threshold: 0.5 }
+);
+
+// Observe the slider container
+observer.observe(document.getElementById("slider-container")); // Replace with your container's actual ID
+
 ```
 
 ## Authors
