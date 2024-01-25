@@ -39,6 +39,7 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 const scrollHandle = () => {
   window.addEventListener("scroll", throttledHandleScroll);
 };
+```
 
 
 ## Tools & Platforms
