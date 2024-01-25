@@ -58,6 +58,7 @@ project-root
 │       └───partners
 ├───components
 │   ├───accordion
+|   |───burgerMenu
 │   ├───cards
 │   └───slider
 ├───css
