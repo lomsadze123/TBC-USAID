@@ -20,16 +20,19 @@ html {
   --navigation-color-strangeGrey: #222222;
 }
 
+/* Adjustments for body and text styles */
 body {
   font-family: "Arial", "Helvetica Neue", sans-serif;
   background-color: var(--primary-color-almostBlack);
 }
 
+/* Apply overflow hidden to specific elements */
 .overflow-hidden,
 .accordion-item {
   overflow: hidden;
 }
 
+/* Set text color for various elements */
 h1,
 h2,
 h3,
@@ -44,6 +47,7 @@ h1 {
   line-height: 4rem;
 }
 
+/* Hide certain elements with display none */
 .hide,
 .burger-checkbox {
   display: none;
@@ -55,6 +59,7 @@ header.hidden {
   transform: translateY(-100%);
 }
 
+/* This comment reflects best practices for CSS order */
 header {
   /* Positioning */
   position: fixed;

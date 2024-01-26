@@ -1,12 +1,11 @@
 /* Styles for the accordion wrapper, which contains individual accordion items. */
 .accordion-parent-container {
   padding: 5rem 1.6rem;
-  margin: 0 auto;
 }
 
 .accordion-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 5.5rem;
 }

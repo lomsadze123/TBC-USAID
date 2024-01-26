@@ -3,10 +3,13 @@ const burgerMenuHandle = () => {
   const navigation = document.getElementById("navigation");
   const body = document.body;
 
-  burgerMenu.addEventListener("click", () => {
+  // Toggle CSS classes on body and navigation when burger menu is clicked
+  const toggleClasses = () => {
     body.classList.toggle("overflow-hidden");
     navigation.classList.toggle("hide");
-  });
+  };
+
+  burgerMenu.addEventListener("click", toggleClasses);
 };
 
 export default burgerMenuHandle;

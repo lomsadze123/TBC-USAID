@@ -21,6 +21,7 @@ let currentPage = 0;
 let autoMove = true;
 let intervalId;
 
+// Render a subset of sliders based on the current page
 const renderSliderSubset = () => {
   const startIndex = currentPage * slidersPerPage;
   const endIndex = startIndex + slidersPerPage;
@@ -59,11 +60,13 @@ const createNavigationButtons = () => {
 
 createNavigationButtons();
 
+// Move to the next set of sliders
 const moveRight = () => {
   currentPage =
     (currentPage + 1) % Math.ceil(sliderData.length / slidersPerPage);
 };
 
+// Move to the previous set of sliders
 const moveLeft = () => {
   currentPage =
     (currentPage - 1 + Math.ceil(sliderData.length / slidersPerPage)) %
@@ -98,6 +101,7 @@ const slidersMovement = () => {
 
 slidersMovement();
 
+// Handle slider behavior when cursor is over it
 const handleSlider = () => {
   // Pause automatic movement when cursor is over the slider
   elements.buttons.addEventListener("mouseenter", () => {
@@ -118,7 +122,7 @@ const handleTouch = () => {
   let touchEndX = 0;
 
   elements.sliderContainer.addEventListener("touchstart", (e) => {
-    const { clientX } = e.touches[0];
+    const { clientX } = e.touches[0]; // appreciate destructuring :D
     touchStartX = clientX;
   });
 

@@ -8,7 +8,6 @@ import burgerMenuHandler from "../components/burgerMenu/burgerMenu.js";
 // Event listener for when the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Initial renders when the DOM is fully loaded
-
   renderCoursesCards();
 
   renderSliderSubset();

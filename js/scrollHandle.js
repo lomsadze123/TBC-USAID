@@ -1,3 +1,4 @@
+// Throttle function to limit the frequency of scroll event handling
 const throttle = (func, delay) => {
   let lastCall = 0;
   return function () {
@@ -22,8 +23,7 @@ const handleDesktopScroll = (header, scrollTop) => {
   header.style.opacity = opacity;
 };
 
-console.log(isMobile());
-
+// Function to handle scrolling up behavior (specific to mobile)
 const scrollingUp = (header, scrollTop) => {
   if (isMobile()) {
     header.style.opacity = 1;
@@ -45,8 +45,9 @@ const throttledHandleScroll = throttle(() => {
     handleDesktopScroll(header, scrollTop);
   }
 
+  // Update the last scroll position for scrolling up behavior
   lastScrollTop = scrollingUp(header, scrollTop);
-}, 150); // Adjust the delay as needed
+}, 150); // Delay set to 150 milliseconds for performance adjustments
 
 const scrollHandle = () => {
   window.addEventListener("scroll", throttledHandleScroll);
