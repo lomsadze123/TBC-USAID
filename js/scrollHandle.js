@@ -9,47 +9,33 @@ const throttle = (func, delay) => {
     }
   };
 };
-let lastScrollTop = 0;
-
-const isMobile = () => window.innerWidth <= 768;
-
-const handleMobileScroll = (header, scrollTop) => {
-  header.style.opacity = 1;
-  header.classList.toggle("hidden", scrollTop !== 0);
-};
-
-const handleDesktopScroll = (header, scrollTop) => {
-  const opacity = scrollTop > 50 ? 0.9 : 1;
-  header.style.opacity = opacity;
-};
-
-// Function to handle scrolling up behavior (specific to mobile)
-const scrollingUp = (header, scrollTop) => {
-  if (isMobile()) {
-    header.style.opacity = 1;
-    // Adjusted the condition to check if scrolling to the top
-    if (scrollTop === 0 || (scrollTop < lastScrollTop && scrollTop !== 0)) {
-      header.classList.remove("hidden");
-    }
-  }
-  return scrollTop;
-};
-
-const throttledHandleScroll = throttle(() => {
-  const header = document.getElementById("header");
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  if (isMobile()) {
-    handleMobileScroll(header, scrollTop);
-  } else {
-    handleDesktopScroll(header, scrollTop);
-  }
-
-  // Update the last scroll position for scrolling up behavior
-  lastScrollTop = scrollingUp(header, scrollTop);
-}, 150); // Delay set to 150 milliseconds for performance adjustments
 
 const scrollHandle = () => {
+  // magic numbers
+  const THROTTLE_DELAY = 150;
+  const SCROLL_THRESHOLD = 768;
+
+  let lastScrollTop = 0;
+
+  const handleScroll = () => {
+    const header = document.getElementById("header");
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const isScrollingDown = scrollTop > lastScrollTop;
+
+    // Adjust header opacity based on scroll direction and window width
+    if (isScrollingDown && window.innerWidth <= SCROLL_THRESHOLD) {
+      header.style.opacity = 0;
+    } else {
+      // If scrolling up, set opacity to 1; if scrolling down, set opacity to 0.8
+      header.style.opacity = isScrollingDown ? 0.8 : 1;
+    }
+
+    lastScrollTop = scrollTop;
+  };
+
+  // Create a throttled version of the handleScroll function
+  const throttledHandleScroll = throttle(handleScroll, THROTTLE_DELAY);
+
   window.addEventListener("scroll", throttledHandleScroll);
 };
 
