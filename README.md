@@ -71,12 +71,12 @@ project-root
 
 The project follows a structured organization to maintain clarity and modularity:
 
-- **assets/:** Contains images, icons, and other static assets.
-- **components/:** Modular components such as cards, sliders, and accordions.
-- **data/:** JSON files storing data for cards, sliders, and accordion items.
-- **js/:** JavaScript files organized by functionality, including models, views, and controllers.
-- **styles/:** CSS files for styling components and layout.
-- **index.html:** The main HTML file serving as the entry point for the application.
+- **`assets/:`** Contains images, icons, and other static assets.
+- **`components/:`** Modular components such as cards, sliders, and accordions.
+- **`data/:`** JSON files storing data for cards, sliders, and accordion items.
+- **`js/:`** JavaScript files organized by functionality, including models, views, and controllers.
+- **`styles/:`** CSS files for styling components and layout.
+- **`index.html:`** The main HTML file serving as the entry point for the application.
 
 ## Installation
 
