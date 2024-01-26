@@ -102,6 +102,10 @@ Open the **index.html** file in your preferred web browser.
 
 Explore the courses and programs available on the TBC-USAID Academy platform.
 
+## View Live Demo
+
+Visit the live demo: [TBC USAID](https://main--tbc-usaid-marteli.netlify.app/)
+
 ## Features
 
 - Responsive Navigation (Flex, Grid)
