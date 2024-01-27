@@ -12,7 +12,7 @@ const throttle = (func, delay) => {
 
 const scrollHandle = () => {
   // magic numbers
-  const THROTTLE_DELAY = 150;
+  const THROTTLE_DELAY = 80;
   const SCROLL_THRESHOLD = 768;
 
   let lastScrollTop = 0;
@@ -24,10 +24,11 @@ const scrollHandle = () => {
 
     // Adjust header opacity based on scroll direction and window width
     if (isScrollingDown && window.innerWidth <= SCROLL_THRESHOLD) {
-      header.style.opacity = 0;
+      header.style.top = scrollY < 90 ? "0" : "-9rem";
     } else {
-      // If scrolling up, set opacity to 1; if scrolling down, set opacity to 0.8
-      header.style.opacity = isScrollingDown ? 0.8 : 1;
+      // If scrolling down, set opacity to 0.8
+      header.style.backgroundColor = "rgba(22, 22, 22, .8)";
+      header.style.top = "0";
     }
 
     lastScrollTop = scrollTop;

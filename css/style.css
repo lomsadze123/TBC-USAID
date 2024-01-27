@@ -73,7 +73,7 @@ header {
 
   /* Visual */
   background-color: var(--primary-color-almostBlack);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, top 0.3s ease-out;
 }
 
 nav {
@@ -149,7 +149,7 @@ a {
 /* Header styles end */
 
 main {
-  margin: 8.2rem 0 0 0;
+  margin: 8.8rem 0 0 0;
 }
 
 section {
