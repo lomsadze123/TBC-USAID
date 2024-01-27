@@ -54,6 +54,10 @@ const createNavigationButtons = () => {
       currentPage = i;
       renderSliderSubset();
     });
+
+    // set aria-label for navigation buttons (for accessibility purposes)
+    navButton.setAttribute("aria-label", `Go to page ${i + 1}`);
+
     elements.navigation.appendChild(navButton);
   }
 };
