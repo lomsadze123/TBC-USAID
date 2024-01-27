@@ -71,3 +71,8 @@
 .active {
   animation: accordionAnimation 1s ease-in-out;
 }
+
+.active img {
+  transform: rotate(180deg);
+  transition: transform 0.1s ease-in;
+}
