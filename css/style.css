@@ -19,6 +19,7 @@ html {
   --border-color-silver: #353131;
   --footer-color-strangeBlack: #1a1e1f;
   --navigation-color-strangeGrey: #222222;
+  --opened-burgerMenu-color-grey: #767676;
 }
 
 /* Adjustments for body and text styles */
