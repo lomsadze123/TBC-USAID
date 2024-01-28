@@ -26,9 +26,6 @@ const renderAccordionQuestions = () => {
 
     // Render the accordion
     accordionController.renderAccordion();
-
-    // The accordion is closed after rendering
-    accordionController.closeAllAccordions();
   });
 };
 

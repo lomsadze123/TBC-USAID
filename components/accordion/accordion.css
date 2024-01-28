@@ -46,6 +46,8 @@
 .accordion-item {
   border-bottom: 1px solid var(--border-color-silver);
   padding: 0 0 2rem 0;
+  max-height: 5rem;
+  transition: max-height 0.4s ease;
 }
 
 .accordion-container li + li {
@@ -58,18 +60,8 @@
   gap: 4rem;
 }
 
-@keyframes accordionAnimation {
-  from {
-    max-height: 6rem;
-    overflow: hidden;
-  }
-  to {
-    max-height: 1000px;
-  }
-}
-
 .active {
-  animation: accordionAnimation 1s ease-in-out;
+  max-height: 100rem;
 }
 
 .active img {

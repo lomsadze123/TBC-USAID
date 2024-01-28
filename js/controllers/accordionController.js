@@ -29,7 +29,13 @@ class AccordionController {
   }
 
   // Toggles the state of the accordion item and updates its content accordingly.
-  toggleAccordion() {
+  toggleAccordion(e) {
+    if (
+      !e.target.classList.contains("accordion-questions") &&
+      !e.target.classList.contains("accordion-question")
+    )
+      return;
+
     const accordionItem = this.container.querySelector(
       `[data-accordion-id="${this.model.id}"]`
     );
@@ -46,24 +52,16 @@ class AccordionController {
         accordionItem.querySelector(".accordion-answer");
 
       answerStagesContainer.innerHTML = `
-        ${this.model.intro ? `<p class="intro">${this.model.intro}</p>` : ""}
-       ${
-         this.model.stages
-           ? `<div class="stages-container">${this.view.renderStages(
-               this.model.stages
-             )}</div>`
-           : ""
-       }
-          <p class="answer-content">${this.model.answer}</p>
-      `;
-    } else {
-      // If the clicked accordion was the currently open one, close it
-      accordionItem.classList.remove("active");
-
-      // Clear both answer and stages content for the closed accordion
-      const answerStagesContainer =
-        accordionItem.querySelector(".accordion-answer");
-      answerStagesContainer.innerHTML = "";
+      ${this.model.intro ? `<p class="intro">${this.model.intro}</p>` : ""}
+      ${
+        this.model.stages
+          ? `<div class="stages-container">${this.view.renderStages(
+              this.model.stages
+            )}</div>`
+          : ""
+      }
+        <p class="answer-content">${this.model.answer}</p>
+        `;
     }
   }
 
@@ -74,10 +72,6 @@ class AccordionController {
 
     allAccordionItems.forEach((item) => {
       item.classList.remove("active");
-
-      // Clear both answer and stages content for the closed accordion
-      const answerStagesContainer = item.querySelector(".accordion-answer");
-      answerStagesContainer.innerHTML = "";
     });
   }
 }

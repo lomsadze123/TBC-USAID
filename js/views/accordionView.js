@@ -1,6 +1,6 @@
 class AccordionView {
   renderAccordionItem(accordion) {
-    const { id, question, intro, isOpen, stages } = accordion;
+    const { id, question, isOpen } = accordion;
     const activeClass = isOpen ? "active" : "";
 
     return `
@@ -9,14 +9,7 @@ class AccordionView {
           <p class="accordion-question">${question}</p>
           <img src="assets/images/other/accordionArrow.svg" alt="arrow down icon">
         </div>
-        <div class="accordion-answer ${activeClass}">
-          ${intro ? `<p >${intro}</p>` : ""}
-          ${
-            stages
-              ? `<p class="stages-container">${this.renderStages(stages)}</p>`
-              : ""
-          }
-          <p class="answer-content">${accordion.answer}</p>
+        <div class="accordion-answer">
         </div>
       </li>
     `;
