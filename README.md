@@ -23,7 +23,7 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 ## 🚀 Technologies Used
 
-- **:html5: HTML**, **:art: CSS**, **:computer: JavaScript:** The core web technologies for building the front-end user interface.
+- :html5: **HTML**, :art: **CSS**, :computer: **JavaScript:** The core web technologies for building the front-end user interface.
 - **ES6 Modules:** Modular JavaScript for maintaining code organization and reusability.
 - **MVC Architecture:** Adopted a Model-View-Controller architecture for better organization and maintainability of the code.
 - **Intersection Observer API:** Utilized to implement scroll-based interactions and optimize performance.
@@ -86,7 +86,7 @@ Before running or contributing to the TBC-USAID Academy project, make sure to ch
 
 The TBC-USAID Academy web application has been designed and tested to work seamlessly on various web browsers without the need for CSS prefixes. Ensure that you are using a modern web browser, and the application should perform optimally. We recommend the following browsers:
 
-- :chrome: Google Chrome
+- **:chrome:** Google Chrome
 - :firefox: Mozilla Firefox
 - :edge: Microsoft Edge
 - :safari: Safari
