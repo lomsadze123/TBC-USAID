@@ -4,20 +4,27 @@
   }
 
   /* Utility Class to Toggle Visibility */
-  .hide {
-    display: flex;
+  .show {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  /* Adjusting navigation container styles */
-  .navigation-container {
-    position: static;
-    height: 100%;
+  header {
+    padding: 2.4rem;
+  }
+
+  .overlay {
     background-color: transparent;
   }
 
-  .navigation-list {
+  /* Adjusting navigation container styles */
+  .navigation {
+    height: 100%;
+    background-color: transparent;
+    position: static;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
     width: 100%;
     padding: 0;
     background-color: transparent;
@@ -26,6 +33,7 @@
   .tbc-logo {
     max-width: 18.2rem;
     max-height: 4rem;
+    margin: 0;
   }
 
   /* Hiding burger menu on larger screens */
@@ -131,10 +139,6 @@
     padding: 10rem 0;
     font-size: 4rem;
     line-height: 7rem;
-  }
-
-  header {
-    padding: 2.4rem 0;
   }
 
   h2 {

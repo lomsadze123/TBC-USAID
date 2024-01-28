@@ -8,18 +8,18 @@ const burgerMenuHandle = () => {
   // Toggle CSS classes on body and navigation when burger menu is clicked
   const toggleClasses = () => {
     body.classList.toggle("overflow-hidden");
-    navigation.classList.toggle("hide");
+    navigation.classList.toggle("show");
   };
 
   // Close the navigation menu if a click occurs on the navigation element itself
   const closeNavigation = (e) => {
-    if (e.target === navigation) {
+    if (e.target === navigation.parentNode) {
       toggleClasses();
       burgerCheckbox.checked = false;
     }
   };
 
-  navigation.addEventListener("click", closeNavigation);
+  navigation.parentNode.addEventListener("click", closeNavigation);
 
   burgerMenu.addEventListener("click", toggleClasses);
 };

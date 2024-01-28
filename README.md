@@ -1,4 +1,4 @@
-# TBC-USAID Academy
+# https://static.wixstatic.com/media/93e8a3_03d83d668a5f417ca646a5e511f8c02a%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/93e8a3_03d83d668a5f417ca646a5e511f8c02a%7Emv2.png TBC-USAID Academy
 
 TBC-USAID Academy is a web application designed to showcase courses and information related to the TBC IT and TBC x USAID programs. The platform provides an interactive interface for users to explore courses, view program details, and stay informed about the latest updates.
 
@@ -23,7 +23,7 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 ## 🚀 Technologies Used
 
-- [![HTML](https://img.shields.io/badge/HTML-informational?style=flat&logo=html5&logoColor=white&color=E34F26)](https://developer.mozilla.org/en-US/docs/Web/HTML) **HTML**, [![CSS](https://img.shields.io/badge/CSS-informational?style=flat&logo=css3&logoColor=white&color=1572B6)](https://developer.mozilla.org/en-US/docs/Web/CSS) **CSS**, [![JavaScript](https://img.shields.io/badge/JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) **JavaScript:** The core web technologies for building the front-end user interface.
+- [![HTML](https://img.shields.io/badge/HTML-informational?style=flat&logo=html5&logoColor=white&color=E34F26)](https://developer.mozilla.org/en-US/docs/Web/HTML), [![CSS](https://img.shields.io/badge/CSS-informational?style=flat&logo=css3&logoColor=white&color=1572B6)](https://developer.mozilla.org/en-US/docs/Web/CSS), [![JavaScript](https://img.shields.io/badge/JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) The core web technologies for building the front-end user interface.
 - **ES6 Modules:** Modular JavaScript for maintaining code organization and reusability.
 - **MVC Architecture:** Adopted a Model-View-Controller architecture for better organization and maintainability of the code.
 - **Intersection Observer API:** Utilized to implement scroll-based interactions and optimize performance.
@@ -88,7 +88,7 @@ The TBC-USAID Academy web application has been designed and tested to work seaml
 
 - 🌎 Google Chrome
 - 🦊 Mozilla Firefox
-- :ms_office: Microsoft Edge
+- 🌐 Microsoft Edge
 - 🧭 Safari
 
 ### 🖥️ System Requirements
