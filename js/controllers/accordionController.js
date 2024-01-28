@@ -67,7 +67,7 @@ class AccordionController {
         <p class="answer-content">${this.model.answer}</p>
       `;
 
-      // Update the openAccordion reference
+      // Update the isOpen reference
       this.isOpen = accordionItem;
     }
   }
@@ -96,7 +96,7 @@ class AccordionController {
     accordionItem.classList.remove("active");
     setTimeout(() => {
       answerStagesContainer.innerHTML = "";
-    }, 400); // delay for closing accordion
+    }, 300); // delay for closing accordion
   }
 }
 
