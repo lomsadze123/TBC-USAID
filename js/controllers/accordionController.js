@@ -5,6 +5,9 @@ class AccordionController {
     this.view = view;
     this.container = container;
 
+    // Keep track of the currently opened accordion
+    this.isOpen = null;
+
     // Bind the toggleAccordion method to the current instance
     this.toggleAccordion = this.toggleAccordion.bind(this);
   }
@@ -36,15 +39,16 @@ class AccordionController {
     )
       return;
 
-    const accordionItem = this.container.querySelector(
-      `[data-accordion-id="${this.model.id}"]`
-    );
-
+    const accordionItem = e.currentTarget;
     const isOpen = accordionItem.classList.contains("active");
 
-    this.closeAllAccordions();
+    if (isOpen) {
+      // If the accordion is closing, remove the content after a delay
+      this.closeAccordion(accordionItem);
+    } else {
+      // If the accordion is opening, close others and set the content
+      this.closeAllAccordions(accordionItem);
 
-    if (!isOpen) {
       accordionItem.classList.add("active");
 
       // Set the answer and stages content for the opened accordion
@@ -52,27 +56,47 @@ class AccordionController {
         accordionItem.querySelector(".accordion-answer");
 
       answerStagesContainer.innerHTML = `
-      ${this.model.intro ? `<p class="intro">${this.model.intro}</p>` : ""}
-      ${
-        this.model.stages
-          ? `<div class="stages-container">${this.view.renderStages(
-              this.model.stages
-            )}</div>`
-          : ""
-      }
+        ${this.model.intro ? `<p class="intro">${this.model.intro}</p>` : ""}
+        ${
+          this.model.stages
+            ? `<div class="stages-container">${this.view.renderStages(
+                this.model.stages
+              )}</div>`
+            : ""
+        }
         <p class="answer-content">${this.model.answer}</p>
-        `;
+      `;
+
+      // Update the openAccordion reference
+      this.isOpen = accordionItem;
     }
   }
 
-  // Closes all accordion items and clears their content.
-  closeAllAccordions() {
+  // Closes all accordions except the one being opened
+  closeAllAccordions(isOpen) {
     const allAccordionItems =
       this.container.querySelectorAll(".accordion-item");
 
     allAccordionItems.forEach((item) => {
-      item.classList.remove("active");
+      if (item !== isOpen) {
+        // Close others immediately
+        item.classList.remove("active");
+
+        // Clear content after a delay
+        this.closeAccordion(item);
+      }
     });
+  }
+
+  // Closes an accordion and clears its content after a delay
+  closeAccordion(accordionItem) {
+    const answerStagesContainer =
+      accordionItem.querySelector(".accordion-answer");
+
+    accordionItem.classList.remove("active");
+    setTimeout(() => {
+      answerStagesContainer.innerHTML = "";
+    }, 400); // delay for closing accordion
   }
 }
 
