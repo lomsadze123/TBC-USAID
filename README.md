@@ -23,7 +23,7 @@ TBC-USAID Academy is a web application designed to showcase courses and informat
 
 ## 🚀 Technologies Used
 
-- :html5: **HTML**, :art: **CSS**, :computer: **JavaScript:** The core web technologies for building the front-end user interface.
+- [![HTML](https://img.shields.io/badge/HTML-informational?style=flat&logo=html5&logoColor=white&color=E34F26)](https://developer.mozilla.org/en-US/docs/Web/HTML) **HTML**, [![CSS](https://img.shields.io/badge/CSS-informational?style=flat&logo=css3&logoColor=white&color=1572B6)](https://developer.mozilla.org/en-US/docs/Web/CSS) **CSS**, [![JavaScript](https://img.shields.io/badge/JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) **JavaScript:** The core web technologies for building the front-end user interface.
 - **ES6 Modules:** Modular JavaScript for maintaining code organization and reusability.
 - **MVC Architecture:** Adopted a Model-View-Controller architecture for better organization and maintainability of the code.
 - **Intersection Observer API:** Utilized to implement scroll-based interactions and optimize performance.
@@ -86,18 +86,18 @@ Before running or contributing to the TBC-USAID Academy project, make sure to ch
 
 The TBC-USAID Academy web application has been designed and tested to work seamlessly on various web browsers without the need for CSS prefixes. Ensure that you are using a modern web browser, and the application should perform optimally. We recommend the following browsers:
 
-- **:chrome:** Google Chrome
-- :firefox: Mozilla Firefox
-- :edge: Microsoft Edge
-- :safari: Safari
+- 🌎 Google Chrome
+- 🦊 Mozilla Firefox
+- :ms_office: Microsoft Edge
+- 🧭 Safari
 
 ### 🖥️ System Requirements
 
 Ensure that your development environment meets the following requirements:
 
-- **:nodejs: Node.js:** The project may use Node.js for certain functionalities. Install Node.js by following the instructions on the [official website](https://nodejs.org/).
+- [![Node.js](https://img.shields.io/badge/Node.js-informational?style=flat&logo=node.js&logoColor=white&color=339933)](https://nodejs.org/) **Node.js:** The project may use Node.js for certain functionalities. Install Node.js by following the instructions on the [official website](https://nodejs.org/).
 
-- **:git: Git:** Make sure Git is installed on your system. You can download it from [git-scm.com](https://git-scm.com/).
+- [![Git](https://img.shields.io/badge/Git-informational?style=flat&logo=git&logoColor=white&color=F05032)](https://git-scm.com/) **Git:** Make sure Git is installed on your system. You can download it from [git-scm.com](https://git-scm.com/).
 
 ## ⚙️ Installation
 
